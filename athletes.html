@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athlètes - Le Ski Acrobatique</title>
+
+  <style>
+    /* ---------- Reset ---------- */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    /* ---------- Gradient background ---------- */
+    body {
+      background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.2),
+        rgba(165, 0, 0, 0.449)
+      );
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 80px;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    /* ---------- Home button ---------- */
+    .home-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 65px;
+      height: 65px;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #0055a5;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .home-button:hover {
+      background-color: #003366;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    /* ---------- Title ---------- */
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 6px #000;
+    }
+
+    /* ---------- Carousel ---------- */
+    .carousel-container {
+      position: relative;
+      width: 320px;
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .athlete-card {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      transition: opacity 0.5s ease;
+      opacity: 0;
+      color: white;
+      text-shadow: 1px 1px 4px #000;
+    }
+
+    .athlete-card.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    /* ---------- Text background box ---------- */
+    .info-box {
+      background-color: rgba(0, 0, 0, 0.55);
+      padding: 12px 14px;
+      border-radius: 10px;
+    }
+
+    .info-box h2 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .info-box p {
+      margin: 4px 0 0 0;
+      font-size: 1rem;
+    }
+
+    .info-box .sport {
+      margin-top: 6px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    /* ---------- Arrows ---------- */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.5rem;
+      color: white;
+      background-color: rgba(0,0,0,0.3);
+      padding: 12px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.2s;
+      z-index: 3;
+    }
+
+    .arrow:hover {
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    #prev { left: -50px; }
+    #next { right: -50px; }
+
+    /* ---------- Dots ---------- */
+    .dots {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background-color: rgba(255,255,255,0.5);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .dot.active {
+      background-color: #ffffff;
+      transform: scale(1.3);
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 500px) {
+      .carousel-container {
+        width: 90%;
+        height: 350px;
+      }
+      .info-box h2 {
+        font-size: 1.2rem;
+      }
+      .info-box p,
+      .info-box .sport {
+        font-size: 0.9rem;
+      }
+      .arrow {
+        font-size: 1.8rem;
+        padding: 8px 12px;
+      }
+      #prev { left: -30px; }
+      #next { right: -30px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="index.html" class="home-button">🏠</a>
+
+  <h1>Athlètes Canadiens</h1>
+
+  <div class="carousel-container">
+
+    <div class="athlete-card active" style="background-image: url('images/athlete1.png')">
+      <div class="info-box">
+        <h2>Mikaël Kingsbury</h2>
+        <p>Ville: Sainte-Agathe-des-Monts, Québec</p>
+        <p>Année: 1992</p>
+        <p class="sport">Sport: Bosses</p>
+      </div>
+    </div>
+
+    <div class="athlete-card" style="background-image: url('images/athlete2.png')">
+      <div class="info-box">
+        <h2>Cassie Sharpe</h2>
+        <p>Ville: Calgary, Alberta</p>
+        <p>Année: 1992</p>
+        <p class="sport">Sport: Halfpipe</p>
+      </div>
+    </div>
+
+    <div class="athlete-card" style="background-image: url('images/athlete3.png')">
+      <div class="info-box">
+        <h2>Megan Oldham</h2>
+        <p>Ville: Newmarket, Ontario</p>
+        <p>Année: 2001</p>
+        <p class="sport">Sport: Slopestyle / Big Air</p>
+      </div>
+    </div>
+
+    <div class="athlete-card" style="background-image: url('images/athlete4.png')">
+      <div class="info-box">
+        <h2>Brendan Mackay</h2>
+        <p>Ville: Calgary, Alberta</p>
+        <p>Année: 1997</p>
+        <p class="sport">Sport: Halfpipe</p>
+      </div>
+    </div>
+
+    <div class="athlete-card" style="background-image: url('images/athlete5.png')">
+      <div class="info-box">
+        <h2>Marion Thénault</h2>
+        <p>Ville: Sherbrooke, Québec</p>
+        <p>Année: 2000</p>
+        <p class="sport">Sport: Aerials</p>
+      </div>
+    </div>
+
+    <div class="athlete-card" style="background-image: url('images/athlete6.png')">
+      <div class="info-box">
+        <h2>Naomi Urness</h2>
+        <p>Ville: Mont-Tremblant, Québec</p>
+        <p>Année: 2004</p>
+        <p class="sport">Sport: Big Air</p>
+      </div>
+    </div>
+
+    <div class="arrow" id="prev">&#10094;</div>
+    <div class="arrow" id="next">&#10095;</div>
+  </div>
+
+  <div class="dots">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.athlete-card');
+    const dots = document.querySelectorAll('.dot');
+    let current = 0;
+
+    function showCard(index) {
+      cards.forEach(card => card.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      cards[index].classList.add('active');
+      dots[index].classList.add('active');
+    }
+
+    document.getElementById('next').onclick = () => {
+      current = (current + 1) % cards.length;
+      showCard(current);
+    };
+
+    document.getElementById('prev').onclick = () => {
+      current = (current - 1 + cards.length) % cards.length;
+      showCard(current);
+    };
+
+    dots.forEach((dot, i) => {
+      dot.onclick = () => {
+        current = i;
+        showCard(current);
+      };
+    });
+  </script>
+
+</body>
+</html>

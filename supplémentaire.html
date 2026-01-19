@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplémentaire – Ski Acrobatique</title>
+
+  <style>
+    /* ---------- Reset ---------- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #b30000, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    /* ---------- Home button ---------- */
+    .home-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 65px;
+      height: 65px;
+      background-color: rgba(255, 255, 255, 0.85);
+      color: #b30000;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .home-button:hover {
+      background-color: #b30000;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    /* ---------- Main card ---------- */
+    .container {
+      background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.95),
+        rgba(245,245,245,0.95)
+      );
+      max-width: 900px;
+      width: 100%;
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    /* ---------- Title ---------- */
+    h1 {
+      text-align: center;
+      font-size: 2.6rem;
+      margin-bottom: 30px;
+      color: #b30000;
+    }
+
+    /* ---------- Section layout ---------- */
+    .section {
+      margin-bottom: 30px;
+      padding-left: 20px;
+      border-left: 5px solid #b30000;
+    }
+
+    .section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .section p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    /* ---------- Highlight box ---------- */
+    .highlight {
+      background: linear-gradient(
+        to right,
+        rgba(179,0,0,0.1),
+        rgba(179,0,0,0.05)
+      );
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 10px;
+    }
+
+    /* ---------- Personal note ---------- */
+    .personal {
+      background: linear-gradient(
+        to right,
+        #b30000,
+        #e60000
+      );
+      color: white;
+      border-radius: 15px;
+      padding: 25px;
+    }
+
+    .personal h2,
+    .personal p {
+      color: white;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .section h2 {
+        font-size: 1.3rem;
+      }
+      .section p {
+        font-size: 1rem;
+      }
+      .home-button {
+        width: 55px;
+        height: 55px;
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Home Button -->
+  <a href="index.html" class="home-button">🏠</a>
+
+  <div class="container">
+
+    <h1>Ski Acrobatique – Informations Supplémentaires</h1>
+
+    <div class="section">
+      <h2>Statut Olympique</h2>
+      <div class="highlight">
+        <p>Ski acrobatique n'est pas dans paralympique</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Équipement Utilisé</h2>
+      <div class="highlight">
+        <p>
+          Athlètes utilisent des skis twin-tip<br>
+          Pour les sauts, les rails et les figures.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Nouvelle en 2026</h2>
+      <div class="highlight">
+        <p>
+          Bosses en parallèle<br>
+          Nouvelle discipline pour olympiques d’hiver.
+        </p>
+      </div>
+    </div>
+
+    <div class="section personal">
+      <h2>Mon Expérience Personnelle</h2>
+      <p>
+        J’ai commencé à pratiquer le ski acrobatique<br>
+        Rails simples<br>
+        Petits sauts<br>
+        J’adore le ski acrobatique
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Système de Pointage</h2>
+      <div class="highlight">
+        <p>
+          L'athlète avec le plus de points gagne<br>
+          En ski cross, l’athlète le plus rapide gagne
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
